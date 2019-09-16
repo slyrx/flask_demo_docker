@@ -1,12 +1,13 @@
 # python:alpine is 3.{latest}
-FROM python:alpine 
+FROM python 
 
 LABEL maintainer="Jeeva S. Chelladhurai"
 
 RUN pip install flask
+RUN pip install pycryptodome
 
 COPY src /src/
 
 EXPOSE 5000
 
-ENTRYPOINT ["python", "/src/app.py"]
+CMD ["python", "/src/app.py"]
